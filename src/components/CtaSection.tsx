@@ -4,7 +4,7 @@ import { ScrollReveal } from "./interactive";
 
 export function CtaSection() {
   return (
-    <section className="bg-[#030844] py-16 lg:py-20 relative overflow-hidden">
+    <section className="bg-[#030844] py-10 lg:py-12 relative overflow-hidden">
       {/* Left-Aligned Ambient Purple Glow */}
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[var(--purple)] opacity-40 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
       
