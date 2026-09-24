@@ -142,7 +142,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative w-full max-w-[1000px] mx-auto z-[2] mt-[30px] md:mt-[60px] px-4 sm:px-6 lg:px-8">
+          <div className="relative w-full max-w-[1100px] mx-auto z-[2] mt-[30px] md:mt-[60px] px-4 sm:px-6 lg:px-8">
             {/* Background Marquee */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[380vw] sm:w-[320vw] pointer-events-none select-none z-0 overflow-hidden flex justify-center items-center py-[40px] motion-reduce:hidden" aria-hidden="true">
               <div className="flex items-center shrink-0 w-max whitespace-nowrap will-change-transform animate-hero-marquee">
