@@ -168,7 +168,7 @@ export function EventTypesSection() {
                 {/* Card Content */}
                 <div className="p-6 flex flex-col h-full flex-1">
                   <h4 className="font-bold text-[#181521] text-[17px] mb-2">{type.title}</h4>
-                  <p className="text-[1.0625rem] lg:text-[1.125rem] text-[#4b4657] leading-[1.65] mb-8">{type.desc}</p>
+                  <p className="text-[1.0625rem] lg:text-[1.125rem] text-[#4b4657] leading-[1.65]">{type.desc}</p>
                   
                   <div className={`mt-auto w-8 h-8 rounded-full flex items-center justify-center ml-auto transition-colors ${
                     isActive ? 'bg-purple-100 text-[var(--purple)]' : 'bg-gray-50 text-gray-400'
