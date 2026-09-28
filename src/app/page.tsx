@@ -121,32 +121,14 @@ export default function Home() {
 
             {/* Main Screenshot Image (Cropped and Faded) */}
             <div className="relative z-10 overflow-hidden max-h-[350px] sm:max-h-[450px] md:max-h-[500px] rounded-t-[12px] md:rounded-t-[16px]">
-              {/* Fallback image for users who prefer reduced motion */}
-              <Image 
-                src="/images/dashboard-screenshot.png" 
-                alt="ConGenie Dashboard Static Fallback" 
-                width={2880} 
-                height={1600} 
-                className="w-full h-auto object-cover object-top border-t border-l border-r border-[#e8defc] rounded-t-[12px] md:rounded-t-[16px] hidden motion-reduce:block" 
-                priority 
-              />
-              {/* Autoplaying video for default experience */}
               <video
                 autoPlay
                 loop
                 muted
                 playsInline
-                poster="/images/dashboard-screenshot.png"
-                className="w-full h-auto object-cover object-top border-t border-l border-r border-[#e8defc] rounded-t-[12px] md:rounded-t-[16px] block motion-reduce:hidden"
+                className="w-full h-auto object-cover object-top border-t border-l border-r border-[#e8defc] rounded-t-[12px] md:rounded-t-[16px]"
               >
                 <source src="/video/promo.mp4" type="video/mp4" />
-                <Image 
-                  src="/images/dashboard-screenshot.png" 
-                  alt="ConGenie Dashboard" 
-                  width={2880} 
-                  height={1600} 
-                  className="w-full h-auto object-cover object-top" 
-                />
               </video>
               {/* Fade Overlay */}
               <div className="absolute inset-x-0 bottom-0 h-[10%] bg-gradient-to-t from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
