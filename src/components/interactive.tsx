@@ -173,7 +173,7 @@ export function HeroHeading() {
       
       gsap.to(currentSpan, { y: -30, opacity: 0, duration: 0.5, ease: "power2.inOut" });
       gsap.fromTo(nextSpan, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" });
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, { scope: headingRef });

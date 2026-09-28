@@ -2,6 +2,7 @@ import { EventTypesSection } from "@/components/EventTypesSection";
 import { IntegrationsSection } from "@/components/IntegrationsSection";
 import { EnterpriseScaleSection } from "@/components/EnterpriseScaleSection";
 import { CtaSection } from "@/components/CtaSection";
+import { LifecycleSection } from "@/components/LifecycleSection";
 import Image from "next/image";
 import { Icon, Section } from "@/components/ui";
 import { Header, HeroHeading, ScrollReveal } from "@/components/interactive";
@@ -27,59 +28,6 @@ const heroBgHeadings = [
 ];
 const bgMarqueeItems = [...heroBgHeadings, ...heroBgHeadings];
 
-
-const lifecycleStages = [
-  {
-    title: "Plan",
-    desc: "Lay the foundation for a successful event.",
-    icon: "calendar",
-    capabilities: [
-      { label: "Event Setup", icon: "sliders" },
-      { label: "Agenda", icon: "calendar" },
-      { label: "Event Website", icon: "globe" },
-    ]
-  },
-  {
-    title: "Register",
-    desc: "Create seamless registration experiences.",
-    icon: "document",
-    capabilities: [
-      { label: "Dynamic Forms", icon: "document" },
-      { label: "Payments", icon: "credit-card" },
-      { label: "Attendee Management", icon: "users" },
-    ]
-  },
-  {
-    title: "Engage",
-    desc: "Foster meaningful connections.",
-    icon: "users",
-    capabilities: [
-      { label: "Meetings", icon: "users" },
-      { label: "Exhibitors", icon: "store" },
-      { label: "Communications", icon: "mail" },
-    ]
-  },
-  {
-    title: "Operate",
-    desc: "Deliver smooth, on-site experiences.",
-    icon: "check",
-    capabilities: [
-      { label: "Check-in", icon: "check" },
-      { label: "Badges", icon: "badge" },
-      { label: "QR Scanning", icon: "qr" },
-    ]
-  },
-  {
-    title: "Analyze",
-    desc: "Turn event data into what’s next.",
-    icon: "bar-chart",
-    capabilities: [
-      { label: "Live Insights", icon: "bar-chart" },
-      { label: "Reports", icon: "document" },
-      { label: "Exports & API", icon: "code" },
-    ]
-  }
-];
 
 
 const coreCapabilities = [
@@ -118,9 +66,9 @@ export default function Home() {
       <Header />
       <main id="main">
         {/* ── 1. HERO ── */}
-        <Section id="home" className="pt-[48px] sm:pt-[64px] !pb-0 bg-[radial-gradient(ellipse_at_50%_0%,#eae4ff_0%,#f5f2ff_45%,white_80%)] overflow-clip relative">
-          {/* ── Minimal clean background ── */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#f3f0ff]/50 to-transparent pointer-events-none z-0"></div>
+        <Section id="home" className="pt-[48px] sm:pt-[64px] !pb-0 overflow-clip relative bg-[linear-gradient(150deg,#fff_12%,#fbf9ff_40%,#d6c0ff_58%,#843df5_76%,#faf8ff_80%,#fff_100%)]">
+          {/* Subtle fade to white at the bottom so it blends into the next section */}
+          <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-white to-transparent pointer-events-none z-0"></div>
 
           <div className="relative w-full max-w-[1100px] mx-auto z-[5] mt-[10px] sm:mt-[20px]">
             <div className="text-center relative z-10 px-4 sm:px-4 md:px-6 lg:px-8">
@@ -206,83 +154,7 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* ── 2. ENTERPRISE TRUST / PROOF ── */}
-        <Section id="platform" className="bg-white">
-          <div className="bg-[#030844] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] p-[32px] sm:p-[48px] md:p-[64px] shadow-[0_24px_48px_rgba(3,8,68,0.16)] overflow-hidden relative max-w-[1100px] mx-auto w-full">
-            {/* Top-Right Ambient Purple Glow */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--purple)] opacity-40 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
-            {/* Bottom-Left Ambient Purple Glow */}
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[var(--purple)] opacity-30 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-[32px] sm:gap-[40px] relative z-10">
-              {[
-                ["500+", "Events Delivered"],
-                ["250K+", "Registrations"],
-                ["40+", "Countries"],
-                ["200+", "Clients"],
-              ].map(([value, label]) => (
-                <div key={label} className="flex flex-col gap-[8px]">
-                  <strong className="font-[family-name:var(--font-heading),sans-serif] text-[clamp(2.5rem,4vw,3.5rem)] font-bold text-white tracking-[-0.02em] leading-none">
-                    {value}
-                  </strong>
-                  <span className="text-[1rem] md:text-[1.125rem] text-[#c9aeff] font-medium tracking-[0.02em]">
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        {/* ── 3. EVENT LIFECYCLE ── */}
-        <section id="lifecycle" className="bg-[#faf9ff] py-16 lg:py-20 relative overflow-hidden">
-          {/* Extremely restrained background decoration - faint radial shape */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-white opacity-40 blur-[120px] rounded-[100%] pointer-events-none -z-0"></div>
-          
-          <div className="container max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-            <header className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
-              <ScrollReveal selector=".reveal-header" stagger={0.15}>
-                <h2 className="reveal-header font-[family-name:var(--font-heading),Arial,sans-serif] text-[clamp(2rem,3.5vw,3rem)] font-bold tracking-[-0.02em] leading-tight text-[#181521] mb-0">
-                  One platform for the<br />entire event lifecycle.
-                </h2>
-              </ScrollReveal>
-            </header>
-
-            <ScrollReveal selector=".reveal-card" stagger={0.12} start="top 80%">
-              <div className="mt-8 lg:mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5 xl:gap-6 relative">
-                {lifecycleStages.map((stage, index) => (
-                  <div key={stage.title} className="reveal-card relative group">
-                  <div className="bg-white border border-[#e0d8f5] rounded-2xl p-6 lg:p-7 h-full flex flex-col hover:border-[var(--purple)] hover:shadow-md transition-all duration-300 relative z-10">
-
-                    <h3 className="text-xl font-semibold text-neutral-900 tracking-[-0.01em]">{stage.title}</h3>
-                    
-                    <div className="border-t border-neutral-100 my-6"></div>
-                    
-                    <ul className="flex flex-col gap-4 m-0 p-0 list-none">
-                      {stage.capabilities.map((cap) => (
-                        <li key={cap.label} className="flex items-center gap-3">
-                          <Icon name={cap.icon} className="w-[18px] h-[18px] text-[var(--purple)] shrink-0" />
-                          <span className="text-[1rem] md:text-[1.125rem] font-medium text-neutral-700">{cap.label}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Connector Arrow (hidden on smaller screens, shown on XL) */}
-                  {index < lifecycleStages.length - 1 && (
-                    <div className="hidden xl:block absolute top-1/2 -translate-y-1/2 left-full w-6 z-20" aria-hidden="true">
-                      <div className="absolute top-1/2 left-0 w-full h-[1px] border-t border-dashed border-[#d5cbf0] -translate-y-1/2"></div>
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-[#e0d8f5] bg-white text-[var(--purple)] flex items-center justify-center shadow-sm">
-                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
+        <LifecycleSection />
 
         {/* ── 4. CORE CAPABILITIES ── */}
         <section id="capabilities" className="bg-white py-16 lg:py-20 relative overflow-hidden">
