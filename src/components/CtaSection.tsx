@@ -13,7 +13,7 @@ export function CtaSection() {
           <div className="cta-reveal flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 text-center md:text-left">
             
             <h2 className="font-[family-name:var(--font-heading),Arial,sans-serif] text-[clamp(2rem,3.5vw,2.75rem)] font-bold tracking-[-0.02em] leading-[1.2] text-white text-balance max-w-2xl m-0">
-              Ready?
+              Ready to run your next event with confidence?
             </h2>
             
             <div className="shrink-0">
